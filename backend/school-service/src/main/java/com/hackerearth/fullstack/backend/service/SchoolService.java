@@ -48,4 +48,8 @@ public class SchoolService {
         return schoolRepository.findByNameContainingIgnoreCase(name);
     }
 
+    public void deleteAllSchools() {
+        schoolRepository.deleteAll();
+    }
+
 }

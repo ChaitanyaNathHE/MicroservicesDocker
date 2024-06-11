@@ -64,4 +64,10 @@ public class SchoolController {
         return schoolService.searchSchoolsByName(name);
     }
 
+    @DeleteMapping("/")
+    public ResponseEntity<Void> deleteAllSchools() {
+        schoolService.deleteAllSchools();
+        return ResponseEntity.noContent().build();
+    }
+
 }

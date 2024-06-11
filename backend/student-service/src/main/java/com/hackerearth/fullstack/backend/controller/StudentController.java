@@ -65,4 +65,10 @@ public class StudentController {
     public List<Student> getStudentsBySchool(@PathVariable Long schoolId) {
         return studentService.getStudentsBySchool(schoolId);
     }
+
+    @DeleteMapping("/")
+    public ResponseEntity<Void> deleteAllStudents() {
+        studentService.deleteAll();
+        return ResponseEntity.noContent().build();
+    }
 }
