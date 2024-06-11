@@ -19,7 +19,7 @@ public class StudentService {
     @Autowired
     private RestTemplate restTemplate;
 
-    private static final String SCHOOL_SERVICE_URL = "http://localhost:8000/schools/";
+    private static final String SCHOOL_SERVICE_URL = "http://service1:8080/schools/";
 
     public Student enrollStudent(Student student) {
         String schoolApiUrl = SCHOOL_SERVICE_URL + student.getSchoolId();
@@ -80,7 +80,7 @@ public class StudentService {
     }
 
     public void deleteAll() {
-        restTemplate.delete("http://localhost:8000/schools/");
+        restTemplate.delete("http://service1:8080/schools/");
         studentRepository.deleteAll();
     }
 
